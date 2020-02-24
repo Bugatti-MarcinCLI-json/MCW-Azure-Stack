@@ -31,17 +31,17 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Azure Stack Hub before the hands-on lab setup guide](#azure-stack-hub-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Task 1: Provision an Azure VM to host the Azure Stack Hub Development Kit](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit)
-    - [Task 2: Install Azure Stack Hub Development Kit](#task-2-Install-Azure-Stack-Hub-Development-Kit)
-    - [Task 3: Download and run the Azure Stack Hub Configurator Script](#task-3-Download-and-run-the-Azure-Stack-Hub-Configurator-Script)
-    - [Task 4: Perform post installation tasks](#task-4-Perform-post-installation-tasks)
+    - [Task 1: Provision an Azure VM to host the Azure Stack Hub Development Kit](#task-1-provision-an-azure-vm-to-host-the-azure-stack-hub-development-kit)
+    - [Task 2: Install Azure Stack Hub Development Kit](#task-2-install-azure-stack-hub-development-kit)
+    - [Task 3: Download and run the Azure Stack Hub Configurator Script](#task-3-download-and-run-the-azure-stack-hub-configurator-script)
+    - [Task 4: Perform post installation tasks](#task-4-perform-post-installation-tasks)
 - [Azure Stack Hub Operations before the hands-on lab setup guide](#azure-stack-hub-operations-before-the-hands-on-lab-setup-guide)
   - [Requirements (Operations)](#requirements-operations)
   - [Before the hands-on lab (Operations)](#before-the-hands-on-lab-operations)
-    - [Task 1: Provision an Azure VM to host the Azure Stack Hub Development Kit (Operations)](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit-Operations)
-    - [Task 2: Install Azure Stack Hub Development Kit (Operations)](#task-2-Install-Azure-Stack-Hub-Development-Kit-Operations)
-    - [Task 3: Prepare the Azure Stack Hub Operator Station](#task-3-Prepare-the-Azure-Stack-Hub-Operator-Station)
-    - [Task 4: Register the Azure Stack Hub Development Kit with Azure](#task-4-register-the-azure-stack-hub-development-kit-with-azure)
+    - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit (Operations)](#task-1-provision-an-azure-vm-to-host-the-azure-stack-hub-development-kit-operations)
+    - [Task 2: Install Azure Stack Hub Development Kit (Operations)](#task-2-install-azure-stack-hub-development-kit-operations)
+    - [Task 3: Prepare the Azure Stack Hub Operator Station](#task-3-prepare-the-azure-stack-hub-operator-station)
+  - [Task 4: Register the Azure Stack Hub Development Kit with Azure](#task-4-register-the-azure-stack-hub-development-kit-with-azure)
 
 <!-- /TOC -->
 
@@ -71,7 +71,7 @@ For help with installation of the Azure Stack Hub Development Kit, review the fo
 
 In this task, you will provision an Azure VM that will host the Azure Stack Development Kit deployment
 
-1. Navigate to the following URL to launch the AzureStackOnAzureVM deployment template in the Azure Portal.
+1. Navigate to the following URL to launch the **AzureStackOnAzureVM** deployment template in the Azure Portal.
 
     ```
     http://aka.ms/AzureStackonAzureVM

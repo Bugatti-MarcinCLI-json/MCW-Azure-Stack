@@ -797,17 +797,19 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 2.  When prompted, download the archive file **Azure Stack Marketplace Item Generator and Sample.zip** to the **C:\Downloads** folder (create the folder if needed).
 
-3.  Once the download completes, start File Explorer, select the **View** menu item, and select **File name extensions**.
+3.  Once the download completes, start File Explorer, select the **View** tab, and select the **File name extensions** check box.
 
     ![In the View ribbon of File Explorer, File name extensions checkbox is selected.](images/image1.png "View ribbon of File Explorer")
 
-4.  In File Explorer, navigate to the C:\Downloads folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into C:\Downloads.
+4.  In File Explorer, navigate to the **C:\Downloads** folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into **C:\Downloads**.
 
 5.  In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample** folder, create a new folder named **ContosoWebAppTemplate** and copy the content of the **SampleVMTemplate** folder into it. 
 
-6.  In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons folder.
+6.  In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons** folder.
 
-7.  Right-click the **Wide.png** image, in the right-hand menu, and then select **Open with** -> **Paint**.
+7.  Right-click the **Wide.png** image, in the right-hand menu, and then select **Open with** then select **Paint**.
+
+    ![Open the image in paint.](images/OpenPaint.png "Open the image in paint")
 
 8.  In the Microsoft Paint window, select **Resize**.
 
@@ -821,23 +823,23 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
     ![In the Resize and Skew window, the image size is set to the required values.](images/image3.png "Resize")
 
-10. Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png.  When prompted whether to continue, select **OK** and close Microsoft Paint. 
+10. Save the resulting image in **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons** as **Screenshot.png**.  When prompted whether to continue, select **OK** and close Microsoft Paint. 
 
     > **Note**: You are using sample images for the sake of simplicity. When creating and publishing custom Azure Stack Hub Marketplace solutions, you would create your own icons and screenshots that represent the characteristics of these solutions. Keep in mind that you must ensure that their sizes match those specified in the documentation available at https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md.
 
-11. Delete the file **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\azuredeploy-101-simple-windows-vm.json**.
+11. Navigate  **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates** and delete the **azuredeploy-101-simple-windows-vm.json** file.
 
 12. Start Windows PowerShell ISE as administrator.
 
-13. From the Administrator: Windows PowerShell ISE window, download into the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ folder a sample template that provisions an Azure Stack Hub web app:
+13. From the Administrator: Windows PowerShell ISE window, download into the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates** folder a sample template that provisions an Azure Stack Hub web app:
 
      ```
      Invoke-WebRequest `
-  		-Uri https://raw.githubusercontent.com/polichtm/MCW-Azure-Stack/master/Hands-on%20lab/resources.operations/ContosoWebAppTempate.json `
+  		-Uri https://raw.githubusercontent.com/Microsoft/MCW-Azure-Stack/master/Hands-on%20lab/resources.operations/ContosoWebAppTemplate.json `
 		-OutFile 'C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ContosoWebAppTempate.json'
      ```
 
-14. In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\strings folder.
+14. In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\strings** folder.
 
 15. Open the file **resources.json** in Notepad, modify its content so it matches the following, save, and close the file:
 
@@ -852,7 +854,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
     }
     ```
 
-16. In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate folder.
+16. In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate** folder.
 
 17. Open the file **manifest.json** in Notepad, modify its content so it matches the following, save, and close the file:
 
@@ -913,7 +915,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 ### Task 2: Publish a custom Azure Marketplace solution
 
-1.  From the Administrator: Windows PowerShell ISE window, generate a Marketplace item package file (Contoso.ContosoWebAppTemplate.1.0.0.azpkg) by running the following:
+1.  From the **Windows PowerShell ISE** window, generate a Marketplace item package file (Contoso.ContosoWebAppTemplate.1.0.0.azpkg) by running the following:
 
      ```
      & 'C:\Downloads\Azure Stack Marketplace Item Generator and Sample\AzureGalleryPackageGenerator\AzureGalleryPackager.exe' package -m "C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\manifest.json" -o "C:\Downloads"
@@ -922,7 +924,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 3.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-4.  In the Azure Stack Hub administrator portal, in the hub menu, select **+ Create a resource**.
+4.  In the Azure Stack Hub administrator portal, in the left menu, select **+ Create a resource**.
 
 5.  On the New blade, select **Data + Storage** and then select **Storage account - blob, file, table, queue**.
 
@@ -932,7 +934,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
     -  Subscription: **Consumption Subscription**
 
-    -  Resource group: The name of a new resource **marketplace-pkgs-RG**.
+    -  Resource group: (Create new) **marketplace-pkgs-RG**.
 
     -  Storage account name: **A unique name consisting of between 3 and 24 lower case letters or digits**.
 
@@ -944,19 +946,19 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
     -  Replication: **Locally-redundant storage (LRS)**
 
-7.  Select **Review + create** and then **Create**. Wait until the storage account is provisioned.
+7.  Select **Review + create** and then **Create**. Wait until the storage account is provisioned. Be sure to make note of the storage account name you chose. 
 
-8.  In the hub menu, select **Resource groups**.
+8.  In the left menu, select **Resource groups**.
 
 9.  On the Resource Groups blade in the list of resource groups, select **marketplace-pkgs-RG**.
 
-10. On the marketplace-pkgs-RG blade, select the entry representing the newly created storage account.
+10. On the **marketplace-pkgs-RG** blade, select the entry representing the newly created storage account.
 
 11. On the storage account blade, select **Blobs**.
 
 12. On the Blob service blade, select **+ Container**.
 
-13. In the Name textbox, type **packages** and in the **Access type** drop down list, select **Blob (anonymous read access for blobs only)**.
+13. In the Name textbox, type **packages** and in the **Public access level** drop down list, select **Blob (anonymous read access for blobs only)** and select **OK**. 
 
 14. In the list of containers, select **packages**.
 
@@ -964,15 +966,11 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 16. On the upload blob blade, select the folder icon next to the **Select a file** text box. 
 
-17. In the Choose File to Upload text box, navigate to the location containing the package that you noted in the previous task, select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**.
+17. In the Choose File to Upload dialog, navigate to **C:\Downloads** and select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**. Then click **Upload**. 
 
     ![In the Azure Stack Hub administrator portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images/image5.png "Upload blob pane")
 
-18. Back on the Upload blob blade, select **Upload**.
-
-    > **Note**: Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack Hub Before the Hands-on Lab setup guide**).
-
-19. From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant).
+18. From the **Windows PowerShell ISE** window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant).
 
     >**Note**: Azure Stack Hub still uses the *AzureRM* cmdlets and does not yet support the newer *AzureAZ* cmdlets.
 
@@ -990,38 +988,38 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
 
     ```
-20. When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
+19. When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
-21. From the Administrator: Windows PowerShell ISE window, publish the package to Azure Stack Hub Marketplace by running the following (make sure to replace the placeholder <storageaccountname> with the name of the storage account you created earlier in this task):
+20. From the **Windows PowerShell ISE** window, publish the package to Azure Stack Hub Marketplace by running the following (make sure to replace the placeholder <storageaccountname> with the name of the storage account you created earlier in this task):
 
     ```
     Add-AzsGalleryItem -GalleryItemUri `
       https://<storageaccountname>.blob.local.azurestack.external/packages/Contoso.ContosoWebApp.1.0.0.azpkg -Verbose
     ```
 
-22. Ensure that the command completes successfully.
+21. Ensure that the command completes successfully.
 
-23. Switch back to the Azure Stack Hub administrator portal, in the hub menu, select **+ Create a resource**.
+22. Switch back to the Azure Stack Hub administrator portal, in the left menu, select **+ Create a resource**.
 
     > **Note**: Alternatively, you can use the Azure Stack Hub User portal at <https://portal.local.azurestack.external/>. The newly added Marketplace item should be available in both.
 
-24. On the New blade, select **Custom**.
+23. On the New blade, select **Custom**.
 
-25. On the Custom blade, select **See all** and ensure that **Contoso WebApp** appears in the list of resource types to provision.
+24. On the Custom blade, select **See all** and ensure that **Contoso WebApp** appears in the list of resource types to provision.
 
-    > **Note**: It might take a few minutes for a newly added Marketplace item to appear.
+    > **Note**: It might take a few minutes for a newly added Marketplace item to appear and you may have to click **More**. 
 
     ![In the Azure Stack Hub administrator portal, Contoso WebApp custom Marketplace item is displayed.](images/image6.png "Contoso WebApp custom Marketplace item")
 
-26. On the Custom blade, select **Contoso WebApp**.
+25. On the Custom blade, select **Contoso WebApp**.
 
-27. On the Contoso webapp blade, review the interface of the Contoso webapp blade to verify that it reflects the configuration you specified when creating the package.
+26. On the Contoso webapp blade, review the interface of the Contoso webapp blade to verify that it reflects the configuration you specified when creating the package.
 
-28. On the Contoso webapp blade, select **Create**.
+27. On the Contoso webapp blade, select **Create**.
 
-29. Step through the process of configuring the deployment but do not select **Create**.
+28. Step through the process of configuring the deployment but do not select **Create**.
 
-30. Close all open windows.
+29. Close all open windows.
 
     > **Note**: In general, in order to ensure that the new Azure Stack Hub Marketplace item is functional, you also need to satisfy all of the prerequisites for its deployment, such as OS images referenced by a VM template, are in place. 
 
@@ -1036,7 +1034,9 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
 1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in by using an account with the Global Admin privileges to the Azure AD tenant associated with the Azure Stack Hub environment.
 
-2.  In the Azure portal, select **+ Create a resource**.
+2.  In the Azure portal, expand the portal's left navigation by clicking **Show portal menu** in the top left. Then select **+ Create a resource**.
+
+    ![Show the portal's left navigation](images/ExpandPortal.png "Expand the portal")
 
 3.  On the New blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
