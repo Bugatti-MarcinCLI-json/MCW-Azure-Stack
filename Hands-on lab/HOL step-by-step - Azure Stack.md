@@ -145,7 +145,7 @@ Duration: 15-30 minutes
 
 ![Screenshot of an Azure Stack Hub Deployment Taxonomy.](images/Hands-onlabstep-by-step-AzureStackimages/media/image69.png "Azure Stack Hub deployment")
 
-1.  Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and navigate to <https://adminportal.local.azurestack.external>.
+1.  Within the Remote Desktop session to **AzSHOST-1**, start a browser and navigate to <https://adminportal.local.azurestack.external> or use the desktop icons.
 
 2.  When prompted, sign in with the **AzSHOperator** you created when following the **Before the hands-on lab guide**.
 
