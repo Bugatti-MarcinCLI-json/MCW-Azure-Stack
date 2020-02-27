@@ -793,19 +793,19 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 ### Task 1: Set up tools and artifacts for publishing custom Azure Stack Hub Marketplace items
 
-1.  From the AzS-Host1 Azure VM, start Internet Explorer and navigate to http://aka.ms/azurestackmarketplaceitem.
+1.  From the AzS-Host1 Azure VM, start a browser and navigate to http://aka.ms/azurestackmarketplaceitem.
 
-2.  When prompted, download the archive file **Azure Stack Marketplace Item Generator and Sample.zip** to the **C:\Downloads** folder (create the folder if needed).
+2.  When prompted, download the archive file **Azure Stack Marketplace Item Generator and Sample.zip** to the **C:\\Downloads** folder (create the folder if needed).
 
 3.  Once the download completes, start File Explorer, select the **View** tab, and select the **File name extensions** check box.
 
     ![In the View ribbon of File Explorer, File name extensions checkbox is selected.](images/image1.png "View ribbon of File Explorer")
 
-4.  In File Explorer, navigate to the **C:\Downloads** folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into **C:\Downloads**.
+4.  In File Explorer, navigate to the **C:\\Downloads** folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into **C:\\Downloads**.
 
-5.  In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample** folder, create a new folder named **ContosoWebAppTemplate** and copy the content of the **SampleVMTemplate** folder into it. 
+5.  In File Explorer, navigate to the **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample** folder, create a new folder named **ContosoWebAppTemplate** and copy the content of the **SampleVMTemplate** folder into it. 
 
-6.  In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons** folder.
+6.  In File Explorer, navigate to the **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample\\ContosoWebAppTemplate\\Icons** folder.
 
 7.  Right-click the **Wide.png** image, in the right-hand menu, and then select **Open with** then select **Paint**.
 
@@ -823,15 +823,15 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
     ![In the Resize and Skew window, the image size is set to the required values.](images/image3.png "Resize")
 
-10. Save the resulting image in **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons** as **Screenshot.png**.  When prompted whether to continue, select **OK** and close Microsoft Paint. 
+10. Save the resulting image in **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample\\ContosoWebAppTemplate\\Icons** as **Screenshot.png**.  When prompted whether to continue, select **OK** and close Microsoft Paint. 
 
     > **Note**: You are using sample images for the sake of simplicity. When creating and publishing custom Azure Stack Hub Marketplace solutions, you would create your own icons and screenshots that represent the characteristics of these solutions. Keep in mind that you must ensure that their sizes match those specified in the documentation available at https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md.
 
-11. Navigate  **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates** and delete the **azuredeploy-101-simple-windows-vm.json** file.
+11. Navigate  **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample\\ContosoWebAppTemplate\\DeploymentTemplates** and delete the **azuredeploy-101-simple-windows-vm.json** file.
 
 12. Start Windows PowerShell ISE as administrator.
 
-13. From the Administrator: Windows PowerShell ISE window, download into the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates** folder a sample template that provisions an Azure Stack Hub web app:
+13. From the Administrator: Windows PowerShell ISE window, download into the **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\\DeploymentTemplates** folder a sample template that provisions an Azure Stack Hub web app:
 
      ```
      Invoke-WebRequest `
@@ -839,7 +839,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 		-OutFile 'C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ContosoWebAppTempate.json'
      ```
 
-14. In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\strings** folder.
+14. In File Explorer, navigate to the **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample\\ContosoWebAppTemplate\\strings** folder.
 
 15. Open the file **resources.json** in Notepad, modify its content so it matches the following, save, and close the file:
 
@@ -854,7 +854,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
     }
     ```
 
-16. In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate** folder.
+16. In File Explorer, navigate to the **C:\\Downloads\\Azure Stack Marketplace Item Generator and Sample\\ContosoWebAppTemplate** folder.
 
 17. Open the file **manifest.json** in Notepad, modify its content so it matches the following, save, and close the file:
 
@@ -920,7 +920,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
      ```
      & 'C:\Downloads\Azure Stack Marketplace Item Generator and Sample\AzureGalleryPackageGenerator\AzureGalleryPackager.exe' package -m "C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\manifest.json" -o "C:\Downloads"
      ```
-2.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
+2.  Start a browser and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/ or use the desktop icons. 
 
 3.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
@@ -952,9 +952,13 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 9.  On the Resource Groups blade in the list of resource groups, select **marketplace-pkgs-RG**.
 
+    ![Select the resource group](images/SelectRG.png "Select resource group")
+
 10. On the **marketplace-pkgs-RG** blade, select the entry representing the newly created storage account.
 
 11. On the storage account blade, select **Blobs**.
+
+    ![Select Blobs in the storage account](images/SelectBlobs.png "Select blobs")
 
 12. On the Blob service blade, select **+ Container**.
 
@@ -966,11 +970,11 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 16. On the upload blob blade, select the folder icon next to the **Select a file** text box. 
 
-17. In the Choose File to Upload dialog, navigate to **C:\Downloads** and select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**. Then click **Upload**. 
+17. In the Choose File to Upload dialog, navigate to **C:\\Downloads** and select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**. Then click **Upload**. 
 
     ![In the Azure Stack Hub administrator portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images/image5.png "Upload blob pane")
 
-18. From the **Windows PowerShell ISE** window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant).
+18. From the **Windows PowerShell ISE** window, sign in to the Azure Stack Hub as operator by running the following. Make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant (The tenant name is the part of your username before .onmicrosoft.com but after the **@**. Ex- The tenant name for **admin@skillmeup.onmicrosoft.com** would be **skillmeup**. Be sure to make note of this tenant name).
 
     >**Note**: Azure Stack Hub still uses the *AzureRM* cmdlets and does not yet support the newer *AzureAZ* cmdlets.
 
@@ -1046,13 +1050,19 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
     -  Organization name: **Fabrikam**
 
-    -  Initial domain name: **Any valid, unique domain portion of the fully qualified DNS domain name in the onmicrosoft.com namespace**.
+    -  Initial domain name: **Any valid, unique domain portion of the fully qualified DNS domain name in the onmicrosoft.com namespace**. (Be sure to make note of this value)
 
     -  Country or region: **United States**
 
-6.  Wait until the new directory is created and then use the link **select here to manage your new directory** to navigate to the **Fabrikam** Azure Active Directory blade.
+    ![Create the directory](images/CreateDirectory.png "Create directory")
 
-7.  On the Fabrikam - Overview blade, select **Users**.
+6.  Wait until the new directory is created and then use the link **Click here to manage your new directory** to navigate to the **Fabrikam** Azure Active Directory blade.
+
+    ![Navigate to Fabrikam](images/NavigateDirectory.png "Navigate to Fabrikam")
+
+7.  On the Fabrikam - Overview blade, select **Users** under **Manage** on the left.
+
+    ![Select Users](images/SelectUsers.png "Select Users")
 
 8.  On the Users - All users blade, select **+ New user**.
 
@@ -1082,6 +1092,8 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
     -  Department : not set
 
+    ![Create a user](images/CreateUser.png "Create a user")
+
 10. Back on the Users - All users blade, select **+ New user**.
 
 11. On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
@@ -1110,9 +1122,15 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
 12. Select the **Directory + Subscription** icon (to the right of the Cloud Shell icon). 
 
+    ![The Directory + Subscription icon](images/DSIcon.png "Directory + Subscription icon")
+
 13. In the Directory + Subscription pane, in the Switch directory section, select the entry representing the Azure Active Directory tenant associated with the Azure Stack Hub environment.
 
+    ![Select Directory](images/SelectDirectory.png "Select Directory")
+
 14. In the Azure portal, select the user name appearing in the upper right corner, select **Sign out**, and then close the web browser window.
+
+    ![Sign out user](images/SignOut.png "Sign out")
 
 ### Task 2: Configure the existing Azure Stack Hub Azure Active Directory tenant
 
@@ -1120,7 +1138,7 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
     > **Note**: Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack Hub - Operations - Before the hands-on lab setup guide**.
 
-2.  From the Administrator: Windows PowerShell ISE window, set the current directory to the location of the Azure Stack Hub Tools and import required PowerShell modules by running the following:
+2.  From the **Windows PowerShell ISE** window, set the current directory to the location of the Azure Stack Hub Tools and import required PowerShell modules by running the following:
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -1128,7 +1146,7 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
     Import-Module .\Identity\AzureStack.Identity.psm1
     ```
 
-3.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
+3.  From the **Windows PowerShell ISE** window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
 
     ```powershell
     Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
@@ -1143,7 +1161,7 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
     ```
 4.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
-5.  From the Administrator: Windows PowerShell ISE window, specify that you will accept identities from the newly created Azure Active Directory tenant by running the following (replace the placeholder `<contoso>` with the DNS name of the existing Azure AD tenant and the placeholder `<fabrikam>` with the DNS name of the newly created Azure AD tenant):
+5.  From the **Windows PowerShell ISE** window, specify that you will accept identities from the newly created Azure Active Directory tenant by running the following (replace the placeholder `<contoso>` with the tenant name of the existing Azure AD tenant and the placeholder `<fabrikam>` with the tenant name of the newly created Azure AD tenant):
 
      ```
      $adminARMEndpoint = "https://adminmanagement.local.azurestack.external"
@@ -1164,13 +1182,13 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
 6.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
-7.  Verify that the operation was successful and close the Administrator: Windows PowerShell ISE window.
+7.  Verify that the operation was successful and close the **Windows PowerShell ISE** window.
 
 ### Task 3: Configure the newly created Azure Active Directory tenant
 
 1.  Start Windows PowerShell ISE as administrator.
 
-2.  From the Administrator: Windows PowerShell ISE window, set the current directory to the location of the Azure Stack Hub Tools and import required PowerShell modules by running the following:
+2.  From the **Windows PowerShell ISE** window, set the current directory to the location of the Azure Stack Hub Tools and import required PowerShell modules by running the following:
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -1178,7 +1196,7 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
     Import-Module .\Identity\AzureStack.Identity.psm1
     ```
 
-3.  From the Administrator: Windows PowerShell ISE window, register Azure Stack Hub with the newly created Azure Active Directory tenant by running the following (replace the placeholder `<fabrikam>` with the DNS name of the newly created Azure AD tenant):
+3.  From the **Windows PowerShell ISE** window, register Azure Stack Hub with the newly created Azure Active Directory tenant by running the following (replace the placeholder `<fabrikam>` with the DNS name of the newly created Azure AD tenant):
 
      ```
      $tenantARMEndpoint = "https://management.local.azurestack.external"
@@ -1192,9 +1210,9 @@ In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
 4.  When prompted, sign in by using the **FabrikamAdmin1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-5.  Verify that the operation was successful and close the Administrator: Windows PowerShell ISE window.
+5.  Verify that the operation was successful and close the **Windows PowerShell ISE** window.
 
-6.  To verify that the multi-tenancy has been configured properly, start Internet Explorer with the InPrivate Browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **FabrikamUser1** account you created in the first task of this exercise.
+6.  To verify that the multi-tenancy has been configured properly, start a browser with a private browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **FabrikamUser1** account you created in the first task of this exercise. Update your password to **demo@pass123** as well.
 
     > **Note**: Multi-tenancy provides the ability for users in the guest Azure Active Directory tenant to access the Azure Stack Hub user portal (and their respective subscriptions), but not the Azure Stack Hub administrator portal.
 
@@ -1213,9 +1231,9 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-2.  In the Azure portal, select **Azure Active Directory**.
+2.  In the Azure portal, select **Azure Active Directory** on the left navigation.
 
-3.  On the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment, select **Users**.
+3.  On the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment, select **Users** under **Manage** on the left.
 
 4.  On the Users - All users blade, select **+ New user**
 
@@ -1277,7 +1295,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 10. In the Azure portal, select **Azure Active Directory**.
 
-11. On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant select **Users**.
+11. On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant select **Users** under **Manage** on the left.
 
 12. On the Users - All users blade, select **+ New user**.
 
@@ -1309,7 +1327,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 ### Task 2: Create a plan consisting of the Subscription service (as the Azure Stack Hub operator)
 
-1.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
+1.  Start a browser and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
 
 2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
@@ -1325,7 +1343,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Description: **Delegated provider plan containing Microsoft.Subscriptions**
 
-    -  Resource group: name of a new resource group **dp-RG**
+    -  Resource group: (Create new) **dp-RG**
 
     ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images/image7.png "Basics tab of the New plan blade")
 
@@ -1335,7 +1353,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images/image8.png "Services tab of the New plan blade")
 
-8.  Select **Quotas**.
+8.  Select the **Quotas** tab.
 
 9.  On the Quotas tab of the New plan blade, in the **Microsoft.Subscriptions** drop down list, select **delegatedProviderQuota**.
 
@@ -1381,7 +1399,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Display name: **Contoso-DP-subscription1**
 
-    -  User: UPN of the **Contoso AzSDP1** user you created earlier in this exercise.
+    -  User: The username of the **Contoso AzSDP1** user you created earlier in this exercise.
 
     -  Offer: **Subscription-for-dp-offer1**
 
@@ -1399,7 +1417,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Display name: **Fabrikam-DP-subscription1**
 
-    -  User: UPN of the **Fabrikam AzSDP1** user you created earlier in this exercise.
+    -  User: The username of the **Fabrikam AzSDP1** user you created earlier in this exercise.
 
     -  Offer: **Subscription-for-dp-offer1**
 
@@ -1467,7 +1485,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Resource group: **dp-RG**
 
-    -  Make this offer public?: **No**
+    -  Make this offer public?: **Yes**
 
     ![In the Azure Stack Hub administrator portal, the Basics tab of the Create a new offer blade is displayed.](images/image17.png "Basics tab of the Create a new offer blade")
 
@@ -1483,17 +1501,19 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 1.  In the Azure Stack Hub administrator portal, select **All services** and then select **Offers**. 
 
+    ![Select 'All services' then 'Offers'](images/SelectOffers.png "Select offers")
+
 2.  On the Offers blade, select **services-for-dp-offer1**.
 
-3.  On the services-for-dp-offer1 blade, select **Delegated providers**.
+3.  On the services-for-dp-offer1 blade, select **Delegated providers** under **Settings** on the left.
 
 4.  Select **+ Add**.
 
 5.  On the Delegate offer blade, specify the following settings:
 
-    -  Name: Accept the default name.
+    -  Name: **Accept the default**.
 
-    -  Pick the delegated provider subscription: **Contoso-DP-subscription1**.
+    -  Pick delegated provider subscription: **Contoso-DP-subscription1**.
 
     ![In the Azure Stack Hub administrator portal, the Delegate offer for Contoso subscriptions blade is displayed.](images/image19.png "Delegate offer")
 
@@ -1521,11 +1541,13 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
    > **Note**: This will allow Contoso users to create subscriptions based on the offer from the delegated provider.
 
-1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Contoso AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
+1.  Start a web browser with a private browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Contoso AzSDP1** account you created in the first task of this exercise. In the **Update your password** dialog, change the password to **demo@pass123**.
 
-2.  In the Azure Stack Hub user portal, select **All services** and then select **Offers**. 
+2.  In the Azure Stack Hub user portal, select **All services** and then select **Offers**. Select **+ Add**. 
 
 3.  On the Create a new offer blade, select **Delegated offer**.
+
+    ![Select Delegated offer](images/SelectDelegated.png "Select delegated offer")
 
 4.  On the Delegated offer blade, select the entry corresponding to the delegated offer based on **services-for-dp-offer1**.
 
@@ -1537,7 +1559,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Provider subscription: **Contoso-DP-subscription1**
 
-    -  Resource group: the name of a new resource group **Contoso-dp1-RG**.
+    -  Resource group: (Create new) **Contoso-dp1-RG**.
 
     ![In the Azure Stack Hub user portal, the Create a new offer for Contoso is displayed.](images/image21.png "Create a new offer")
 
@@ -1559,9 +1581,11 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 12. On the Contoso-DP-subscription1 blade, select **Properties**.
 
-13. On the properties blade, copy the value of the PORTAL URL to clipboard. You will need it in the next task of this exercise. 
+13. On the properties blade, copy the portal url to clipboard. You will need it in the next task of this exercise. You may want to paste it into Notepad.
 
     > **Note**: Tenants need to subscribe to the offer from that URL.
+
+    ![Copy the portal url](images/CopyPortal.png "Copy portal url")
 
 14. Sign out from the Azure Stack Hub tenant portal and close the web browser window.
 
@@ -1569,7 +1593,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
    > **Note**: This will allow Fabrikam users to create subscriptions based on the offer from the delegated provider.
 
-1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Fabrikam AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
+1.  Start a web browser with a private browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Fabrikam AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
 2.  In the Azure Stack Hub user portal, select **All services** and then select **Offers**. 
 
@@ -1587,7 +1611,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Provider subscription: **Fabrikam-DP-subscription1**
 
-    -  Resource group: the name of a new resource group **Fabrikam-dp1-RG**
+    -  Resource group: (Create new) **Fabrikam-dp1-RG**
 
     ![In the Azure Stack Hub user portal, the Create a new offer for Fabrikam is displayed.](images/image23.png "Create a new offer")
 
@@ -1609,7 +1633,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 13. On the Fabrikam-DP-subscription1 blade, select **Properties**.
 
-14. On the properties blade, copy the value of the PORTAL URL to clipboard. You will need it in the next task of this exercise, 
+14. On the properties blade, copy the portal url to clipboard. You will need it in the next task of this exercise, 
 
     > **Note**: Tenants need to subscribe to the offer from that URL.
 
@@ -1617,11 +1641,9 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 ### Task 10: Sign up for the delegated provider's offer (as a Contoso user)
 
-1.  Start a web browser with the InPrivate Browsing option, navigate to the Contoso delegated provider portal URL you identified earlier in this exercise, and, when prompted, authenticate by using the **Contoso User1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
+1.  Start a web browser with a private browsing option, navigate to the Contoso delegated provider portal URL you identified earlier in this exercise, and, when prompted, authenticate by using the **Contoso User1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-    > **Note**: Make sure **NOT** to use the Azure Stack Hub user portal URL in this case.
-
-2.  In the Azure Stack Hub user portal, select **Get a subscription** on the dashboard. 
+2.  In the Azure Stack Hub user portal, select **Get a subscription** on the dashboard. (You may have to navigate to the dashboard)
 
 3.  On the Get a subscription blade, in the Display name text box, type **Contoso-user1-subscription1**.
 
@@ -1629,13 +1651,15 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 5.  On the Choose an offer blade, select the name of the Contoso delegated offer created earlier in this exercise.
 
+    ![Select an offer](images/SelectAnOffer.png "Select an offer")
+
 6.  Select **Create**.
 
 7.  In the message box **Your subscription has been created. You must refresh the portal to start using your subscription**, select **Refresh**. 
 
 ### Task 11: Sign up for the delegated provider's offer (as a Fabrikam user)
 
-1.  Start a web browser with the InPrivate Browsing option, navigate to the Fabrikam delegated provider portal URL you identified earlier in this exercise, and, when prompted, authenticate by using the **Fabrikam User1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
+1.  Start a web browser in a private browing option, navigate to the Fabrikam delegated provider portal URL you identified earlier in this exercise, and, when prompted, authenticate by using the **Fabrikam User1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
     > **Note**: Make sure NOT to use the Azure Stack Hub user portal URL in this case.
 
@@ -1646,6 +1670,8 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 4.  Choose **Select an offer**.
 
 5.  On the Choose an offer blade, select the name of the Contoso delegated offer created earlier in this exercise.
+
+    ![Select another offer](images/SelectAnOffer2.png "Select another offer")
 
 6.  Select **Create**.
 
@@ -1662,7 +1688,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  From the AzS-Host1 Azure VM, start Windows PowerShell ISE as administrator.
 
-2.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
+2.  From the **Windows PowerShell ISE** window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -1676,11 +1702,11 @@ In this exercise, you will configure Role Based Access Control using a custom ro
     $TenantId = (Invoke-RestMethod "$($AuthEndpoint)/$($AADTenantName)/.well-known/openid-configuration").issuer.TrimEnd('/').Split('/')[-1]
 
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
-
     ```
+
 3.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
-4.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following:
+4.  From the **Windows PowerShell ISE** window, sign in to the Azure Stack Hub as operator by running the following:
 
     ```powershell
     $defaultProviderSubscriptionId = (Get-AzureRmSubscription -SubscriptionName 'Default Provider Subscription').Id
@@ -1688,9 +1714,11 @@ In this exercise, you will configure Role Based Access Control using a custom ro
     $defaultProviderSubscriptionId 
     ```
 
-5.  Copy the value of the Default Provider Subscription ID displayed in the Administrator: Windows PowerShell ISE window into Clipboard.
+5.  Copy the value of the Default Provider subscription ID displayed in the **Windows PowerShell ISE** window into Notepad. 
 
-6.  Start File Explorer, create a file **C:\Downloads\CustomReaderRoleDefinition.json** (create the folder **C:\Downloads** if needed), add the following content to it, replace the placeholder `<default_provider_subscription_id>` with the value you copied into Clipboard, and save the file: 
+    ![Copy the subscription ID](images/CopySubID.png "Copy subscription ID")
+
+6.  Start File Explorer, and navigate to **C:\Downloads**. Create the file **CustomReaderRoleDefinition.json** and add the following content to it, replace the placeholder `<default_provider_subscription_id>` with the value you copied in the previous step, and save the file: 
 
      ```
      {
@@ -1718,9 +1746,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  From the AzS-Host1 Azure VM, start a web browser using in private/incognito mode, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the **FabrikamAdmin1** Azure Active Directory credentials you created earlier in this lab. 
 
-2.  In the Azure portal, select **Azure Active Directory**.
+2.  In the Azure portal, select **Azure Active Directory** in the left navigation.
 
-3.  On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant, select **Users**.
+3.  On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant, select **Users** under **Manage** on the left.
 
 4.  On the Users - All users blade, select **+ New user**
 
@@ -1754,9 +1782,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 7.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-8.  In the Azure portal, select **Azure Active Directory**.
+8.  In the Azure portal, select **Azure Active Directory** on the left navigation.
 
-9.  On the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment, select **Users**.
+9.  On the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment, select **Users** under **Manage** on the left.
 
 10. On the Users - All users blade, select **+ New user**.
 
@@ -1818,7 +1846,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Name: **Fabrikam AzSReader1**
 
-    -  User name: the UPN of the Fabrikam Operator1 user you created in the previous exercise.
+    -  Email address: the username of the Fabrikam AzsReader user you created earlier in the task.
 
     -  First name: not set
 
@@ -1838,6 +1866,8 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Department : not set
 
+    ![Invite the user](images/InviteUser.png "Invite user")
+
 16. Start a web browser using in private/incognito mode and browse to the following URL (where `<existing_tenant>` represents the DNS name of the original Azure Active Directory tenant associated with your Azure Stack Hub subscription).
 
      ```
@@ -1850,7 +1880,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 19. Sign out as Fabrikam AzSReader1 from the Azure portal and close the window of the web browser using in private/incognito mode.
 
-20. Navigate back to the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment and select **Groups**.
+20. Navigate back to the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment and select **Groups** under **Manage** on the left.
 
 21. On the Groups - All groups blade, select **+ New group**.
 
@@ -1870,27 +1900,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     ![In the Azure portal, the New Group and Add members blades are displayed.](images/image27.png "New Group and Add members blades")
 
-23. On the Groups - All groups blade, select **+ New group**.
+23. Back on the Groups - All groups blade, select **+ New group**.
 
 24. On the **New Group** blade, specify the following settings, and select **Create**:
-
-    -  Group type: **Security**
-
-    -  Group name: **ContosoAzSReaders**
-
-    -  Group description: **Contoso Azure Stack Hub Readers**
-
-    -  Membership type: **Assigned**
-
-    -  Owners: not set
-
-    -  Members: **Contoso AzSReader1** and **Fabrikam AzSReader1**
-
-    ![In the Azure portal, the New Group and Add members blades are displayed.](images/image27.png "New Group and Add members blades")
-
-25. Back on the Groups - All groups blade, select **+ New group**.
-
-26. On the **New Group** blade, specify the following settings, and select **Create**:
 
     -  Group type: **Security**
 
@@ -1908,7 +1920,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 ### Task 3: Configure RBAC role assignments
 
-1.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at <https://adminportal.local.azurestack.external>.
+1.  Start a browser and navigate to the Azure Stack Hub administrator portal at <https://adminportal.local.azurestack.external>.
 
 2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
@@ -1928,7 +1940,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a custom role selected is displayed.](images/image29.png "Add permissions blade")
 
-7.  Back on the Default Provider Subscription - Access control (IAM) blade and then select **+ Add**.
+7.  Back on the **Default Provider Subscription - Access control (IAM)** blade select **+ Add**.
 
 8.  In the **Add permissions** pane, specify the following settings and then select **Save**:
 
@@ -1950,7 +1962,7 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 1.  From the AzS-Host1 Azure VM, start File Explorer.
 
-2.  In File Explorer, verify that the folder C:\Logs exists (if not, create it). 
+2.  In File Explorer, verify that the folder **C:\Logs** exists (if not, create it). 
 
 3.  Right-click **Logs** and, in the right-click menu, select **Properties**.
 
@@ -1958,9 +1970,17 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 5.  In the Advanced Sharing dialog box, select **Share** this folder and then select **Permissions**.
 
+    ![Advanced Sharing](images/AdvancedSharing.png "Advanced Sharing")
+
 6.  In the Permissions for Logs window, ensure that the Everyone entry is selected and then select **Remove**.
 
-7.  Select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **CloudAdmins** and select **OK**.
+7.  Select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **CloudAdmins** in the **Enter the object names to select** text box and select **OK**. Enter the Azure Stack admin credentials from the **Before the Hands on Lab** guide shown below when prompted. 
+
+    - Username: **azurestack\\azurestackadmin**
+
+    - Password: The password you chose in the **Before the Hands on Lab** guide. 
+
+    ![Specify CloudAdmins](images/SpecifyCloudAdmins.png "Specify CloudAdmins")
 
 8.  Ensure that the **CloudAdmins** entry is selected and select the **Full Control** checkbox in the Allow column.
 
@@ -1974,9 +1994,9 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 ### Task 2: Connect to the privileged endpoint via PowerShell Remoting
 
-1.  From the AzS-Host1 Azure VM, start Windows PowerShell ISE as administrator.
+1.  From the AzS-Host1 Azure VM, start **Windows PowerShell ISE** as administrator.
 
-2.  From the Administrator: Windows PowerShell ISE window, store in a variable the Azure Stack Hub admin credentials that you will use to access Privileged Endpoint by running the following:
+2.  From the **Windows PowerShell ISE** window, store in a variable the Azure Stack Hub admin credentials that you will use to access Privileged Endpoint by running the following:
 
      ```
      $adminUserName = 'azurestack\CloudAdmin'
@@ -1984,7 +2004,7 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
      $adminCredentials = New-Object PSCredential($adminUserName,$adminPassword)
      ```
 
-3.  From the Administrator: Windows PowerShell ISE window, run the following to establish a PowerShell Remoting session to the privileged endpoint:
+3.  From the **Windows PowerShell ISE window**, run the following to establish a PowerShell Remoting session to the privileged endpoint:
 
      ```
      Enter-PSSession -ComputerName 'AzS-ERCS01' -ConfigurationName PrivilegedEndpoint -Credential $adminCredentials
@@ -1992,9 +2012,11 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 4.  Verify that the PowerShell Remoting session has been successfully established. The console pane in the Windows PowerShell ISE window should be displaying the prompt starting with the name of the infrastructure VM hosting the privileged endpoint enclosed in square brackets (`[AzS-ERCS01]`).
 
+    ![PowerShell remoting sessions](images/PSRemoting.png "PowerShell remoting sessions")
+
 ### Task 3: Review capabilities of the privileged endpoint
 
-1.  From the PowerShell Remoting session in the Administrator: Windows PowerShell ISE window, in the console pane, identify all available PowerShell functions and cmdlets by running the following:
+1.  From the PowerShell Remoting session in the **Windows PowerShell ISE** window, in the console pane, identify all available PowerShell functions and cmdlets by running the following:
 
      ```
      Get-Command
@@ -2006,11 +2028,11 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
      Get-CloudAdminUserList
      ```
 
-    > **Note**: The list should include only two accounts - AzureStackAdmin and CloudAdmin.
+    > **Note**: The list should include only two accounts - **AzureStackAdmin** and **CloudAdmin**.
 
 ### Task 4: Manage Azure Stack Hub diagnostics log collection via the privileged endpoint.
 
-1.  From the PowerShell Remoting session in the Administrator: Windows PowerShell ISE window, in the console pane, collect Azure Stack Hub storage logs by running the following:
+1.  From the PowerShell Remoting session in the **Windows PowerShell ISE** window, in the console pane, collect Azure Stack Hub storage logs by running the following:
 
      ```
      Get-AzureStackLog -OutputSharePath '\\AzS-Host1\Logs' -OutputShareCredential $using:adminCredentials -FilterByRole Storage
@@ -2020,7 +2042,7 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
     > You have the option of filtering by role as well as specify the time window for which logs should be collected. For details, refer to https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-diagnostics.
 
-2.  Wait until the cmdlet completes and, in File Explorer, review the content of the C:\Logs folder.
+2.  Wait until the cmdlet completes. You can review the content of the **C:\\Logs** folder in File Explorer.
 
     > **Note**: Disregard any error messages during the log collection.
 
@@ -2036,7 +2058,13 @@ Duration: 30 minutes
 
 ### Task 1: Create a backup user
 
-1.  From the AzS-Host1 Azure VM, select **Start**, in the Start menu, expand the Windows Administrative Tools folder, and select **Active Directory Administrative Center**.
+1.  From the AzS-Host1 Azure VM, sign out then connect to the VM again with the Azure Stack admin credentials from the **Before the Hands on Lab** guide shown below. Select **Start**, in the Start menu, expand the Windows Administrative Tools folder, and select **Active Directory Administrative Center**.
+   
+    - Username: **azurestack\\azurestackadmin**
+
+    - Password: The password you chose in the **Before the Hands on Lab** guide. 
+
+    ![Open AD Administrative Center](images/ADAdminCenter.png "Open AD Admin Center")
 
 2.  In Active Directory Administrative Center, select **azurestack (local)** and, in the main window pane, select the **Users** container.
 
@@ -2058,31 +2086,39 @@ Duration: 30 minutes
 
     -  Password options: **Password never expires**
 
+    ![Specify user settings](images/SpecifyUserSettings.png "Specify user settings")
+
 ### Task 2: Create a backup share
 
    > **Note**: In production scenarios (with Azure Stack Hub integrated systems) you would configure a backup share on a highly available file server. When using Azure Stack Hub Development Kit, you can use for this purpose the ASDK host.
 
 1.  On the AzS-Host1 Azure VM, start File Explorer. 
 
-2.  In File Explorer, create a new folder C:\Backup.
+2.  In File Explorer, create a new folder **Backup** in **C:**.
 
 3.  Right-click **Backup** and, in the menu, select **Properties**.
 
 4.  In the Backup Properties window, select the **Sharing** tab and then select **Advanced Sharing**.
 
+    ![Select Advanced Sharing](images/SelectAdvancedSharing.png "Select Advanced Sharing")
+
 5.  In the Advanced Sharing dialog box, select **Share this folder** and then select **Permissions**.
 
 6.  In the Permissions for Backup window, ensure that the **Everyone** entry is selected and then select **Remove**.
 
-7.  Select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **AzS-BackupOperator** and select **OK**.
+7.  Select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **AzS-BackupOperator** in the **Enter the object names to select** textbox and select **OK**.
+
+    ![Add AzS-BackupOperator to the Permissions for Backup](images/AddBackup.png "Add AzS-BackupOperator to backup permissions")
 
 8.  Ensure that the AzS-BackupOperator entry is selected and select the **Full Control** checkbox in the Allow column.
 
 9.  Select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, select **Locations**. 
 
-10. In the Locations dialog box, select the entry representing the local computer (AzS-Host1) and select **OK**.
+    ![Select locations](images/SelectLocations.png "Select locations")
 
-11. In the Enter the object names to select text box, type **Administrators** and select **OK**.
+10. In the Locations dialog box, select the entry representing the local computer (**AzS-HOSTl**) and select **OK**.
+
+11. In the **Enter the object names to select** text box, type **Administrators** and select **OK**.
 
 12. Ensure that the Administrators entry is selected and select the **Full Control** checkbox in the Allow column.
 
@@ -2096,9 +2132,15 @@ Duration: 30 minutes
 
 16. Select **Edit**.
 
-17. In the Permissions for Backup dialog box, in the list of entries in the Groups or user names pane, select **AzS-BackupOperator**, in the Permissions for AzS-BackupOperator pane, select **Full Control** in the Allow column and then select **OK**.
+17. Select **Add** then in the Select Users, Computers, Service Accounts, or Groups dialog box, type **AzS-BackupOperator** in the **Enter the object names to select** textbox and select **OK**.
 
-18. Back in the Backup Properties window, select **Close**.
+    ![Add AzS-BackupOperator to the Permissions for Backup](images/AddBackup.png "Add AzS-BackupOperator to backup permissions")
+
+18. In the Permissions for Backup dialog box, in the list of entries in the Groups or user names pane, select **AzS-BackupOperator**, in the **Permissions for AzS-BackupOperator** pane, select **Full Control** in the **Allow** column and then select **OK**.
+
+    ![Allow full control](images/AllowFullControl.png "Allow full control")
+
+19. Back in the Backup Properties window, select **Close**.
 
 
 ### Task 3: Generate an encryption certificate
@@ -2116,19 +2158,22 @@ Duration: 30 minutes
      Export-Certificate `
  	    -Cert $cert `
  	    -FilePath c:\Certs\AzSIBackupCert.cer
+         
      ```
 
 ### Task 4: Configure backup controller
 
-1.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
+1.  Start a browser and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/. You can also use the desktop icons.
 
 2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
 3.  In the Azure Stack Hub administrator portal, select **All services**. 
 
-4.  In the ADMINISTRATION section, select **Infrastructure backup**.
+4.  In the **ADMINISTRATION** section, select **Infrastructure backup**.
 
-5.  On the Infrastructure backup blade, select **Configure**.
+    ![Select Infrastructure backup](images/SelectInfrastructureBackup.png "Select Infrastructure backup")
+
+5.  On the **Infrastructure backup** blade, select **Configure**.
 
 6.  On the Backup controller settings blade, specify the following settings and select **OK**:
 
@@ -2148,7 +2193,10 @@ Duration: 30 minutes
 
     ![In the Azure Stack Hub administrator portal, the Backup Controller settings blade is displayed.](images/image34.png "Backup Controller settings blade")
 
-7.  Back on the Infrastructure backup blade, select **Disable automatic backup**.
+7.  Back on the Infrastructure backup blade, select **Disable automatic backup**. Select **Yes** when prompted. 
+
+    ![Select Disable automatic backups](images/DisableAutomaticBackups.png "Select Disable automatic backups")
+
 
 ## After the hands-on lab 
 
@@ -2160,4 +2208,4 @@ In this final task you will clean up the Azure Resources that you have create fo
 
 2.  If running on your own Development Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
 
-You should follow all steps provided *after* attending the Hands-on lab.
+You should follow all steps provided *after* finishing the Hands-on lab.
